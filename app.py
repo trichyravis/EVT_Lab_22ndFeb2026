@@ -1,3 +1,4 @@
+
 """
 Extreme Value Theory (EVT) Risk Lab — The Mountain Path: World of Finance
 Prof. V. Ravichandran | 28+ Years Corporate Finance & Banking | 10+ Years Academic Excellence
@@ -646,12 +647,23 @@ if mode == "Single Stock / Index":
     with mc5: metric_card("Normal VaR", f"{para_var:.3f}%", "Parametric", color=COLORS['light_blue'])
     with mc6: metric_card("Normal ES", f"{para_es:.3f}%", "Parametric", color=COLORS['light_blue'])
 
-    # ── Tabs ──────────────────────────────────────────────────────────────────
-    tab0, tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-        "📈 Returns & Distribution",
+    # ── Two-Row Tab Layout ────────────────────────────────────────────────────
+    st.markdown(f"""
+    <p style="color:{COLORS['text_secondary']};font-size:0.75rem;margin:0.2rem 0 0.1rem;
+              letter-spacing:0.5px;text-transform:uppercase;">📊 Analysis Tabs</p>
+    """, unsafe_allow_html=True)
+    tab0, tab1, tab2, tab3 = st.tabs([
+        "📈 Returns",
         "🏔️ Block Maxima (GEV)",
         "🎯 Peaks-Over-Threshold",
         "📊 VaR Comparison",
+    ])
+
+    st.markdown(f"""
+    <p style="color:{COLORS['text_secondary']};font-size:0.75rem;margin:0.6rem 0 0.1rem;
+              letter-spacing:0.5px;text-transform:uppercase;">📚 Reference Tabs</p>
+    """, unsafe_allow_html=True)
+    tab4, tab5, tab6 = st.tabs([
         "🔍 Tail Analysis",
         "📚 Theory & Formulae",
         "🎓 EVT Education Hub",
